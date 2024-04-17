@@ -1,6 +1,10 @@
-console.log(1)
-console.log(2)
-console.log(4)
-console.log(3)
-console.log(8)
-console.log(888888888888)
+import express from 'express';
+const app = express();
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server started at http://localhost:${port}`);
+});
+
+app.use("/user", userRouter);  
+app.use("/post", postRouter);   
+app.use("/book", bookRouter);   
